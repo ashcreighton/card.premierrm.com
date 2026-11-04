@@ -63,11 +63,12 @@ document.addEventListener("DOMContentLoaded", function() {
   // --- Email ---
   var emailBtn = document.getElementById("email-btn");
   if (emailBtn) {
-    emailBtn.href = "mailto:" + lowerFirst.charAt(0) + lowerLast + "@premierm.com";
+    emailBtn.href = "mailto:" + lowerFirst.charAt(0) + lowerLast + "@premierrm.com";
   }
   // --- Profile picture ---
   var profileImg = document.getElementById("profile-img");
   if (profileImg) {
+    profileImg.onerror = function () { this.onerror = null; this.src = "images/headshots/placeholder.jpg"; };
     profileImg.src = "images/headshots/" + lowerFirst + lowerLast + ".jpg";
     profileImg.alt = first + " " + last;
   }
